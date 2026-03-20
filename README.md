@@ -22,16 +22,22 @@ No auto-posting. Human approval always required.
 
 ### Installation
 
-1. Copy `x-writer-SKILL.md` into your Claude Code skills directory:
-   ```bash
-   cp x-writer-SKILL.md ~/.claude/skills/
-   ```
-2. Open the file and replace the two config values at the top:
-   ```
-   BEARER_TOKEN: YOUR_BEARER_TOKEN_HERE
-   X_HANDLE: YOUR_X_HANDLE_HERE
-   ```
-3. In Claude Code, just ask it to write posts for you — the skill triggers automatically on phrases like "draft tweets", "write posts in my style", "x writer", etc.
+Just give Claude Code this link and ask it to install:
+
+```
+Install this skill for me: https://raw.githubusercontent.com/TurboGuo/x-writer-skill/main/x-writer-SKILL.md
+```
+
+Claude will download the file and save it to `~/.claude/skills/` for you.
+
+After installation, open the skill file and set your config:
+
+1. Go to **Customize > Skills > x writer > Edit Inline** (or open `~/.claude/skills/x-writer-SKILL.md` directly)
+2. Replace `YOUR_BEARER_TOKEN_HERE` with your X API Bearer Token ([get one here](https://developer.x.com/en/portal/dashboard))
+3. Replace `YOUR_X_HANDLE_HERE` with your X handle (no @ sign)
+4. Save — you're ready to go
+
+Then just ask Claude to write posts for you. The skill triggers automatically on phrases like "draft tweets", "write posts in my style", "x writer", etc.
 
 ## Usage examples
 
