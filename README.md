@@ -17,12 +17,11 @@ No auto-posting. Human approval always required.
 
 ### Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
 - An X API Bearer Token ([get one here](https://developer.x.com/en/portal/dashboard)) — Basic tier ($100/mo) or higher required
 
-### Installation
+### Option A: Claude Code (CLI)
 
-Just give Claude Code this link and ask it to install:
+Paste this into Claude Code:
 
 ```
 Install this skill for me: https://raw.githubusercontent.com/TurboGuo/x-writer-skill/main/x-writer-SKILL.md
@@ -30,14 +29,29 @@ Install this skill for me: https://raw.githubusercontent.com/TurboGuo/x-writer-s
 
 Claude will download the file and save it to `~/.claude/skills/` for you.
 
-After installation, open the skill file and set your config:
+Then configure your credentials:
 
 1. Go to **Customize > Skills > x writer > Edit Inline** (or open `~/.claude/skills/x-writer-SKILL.md` directly)
-2. Replace `YOUR_BEARER_TOKEN_HERE` with your X API Bearer Token ([get one here](https://developer.x.com/en/portal/dashboard))
+2. Replace `YOUR_BEARER_TOKEN_HERE` with your X API Bearer Token
 3. Replace `YOUR_X_HANDLE_HERE` with your X handle (no @ sign)
 4. Save — you're ready to go
 
-Then just ask Claude to write posts for you. The skill triggers automatically on phrases like "draft tweets", "write posts in my style", "x writer", etc.
+### Option B: Claude Desktop / Claude.ai (Web)
+
+1. Copy the entire contents of [`x-writer-SKILL.md`](https://raw.githubusercontent.com/TurboGuo/x-writer-skill/main/x-writer-SKILL.md)
+2. Open a new conversation in Claude Desktop or claude.ai
+3. Paste it as your first message, then follow up with:
+   ```
+   Use the skill above. My Bearer Token is already set in the config.
+   ```
+
+> **Tip:** On Claude Desktop, you can also save it as a **Project** prompt so you don't need to paste it every time. Go to **Projects > New Project**, paste the skill content into the **Instructions** field, and start conversations from that project.
+
+> **Note:** Claude Desktop and claude.ai do not have filesystem access, so the skill cannot run `curl` commands directly. Claude will instead guide you through the API calls or ask you to paste your recent tweets for style analysis. For the full automated experience (fetch + analyze + draft), use Claude Code.
+
+### After Setup
+
+Just ask Claude to write posts for you. The skill triggers on phrases like "draft tweets", "write posts in my style", "x writer", etc.
 
 ## Usage examples
 
