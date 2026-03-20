@@ -24,11 +24,10 @@ If the config still has placeholder values (`YOUR_BEARER_TOKEN_HERE` or `YOUR_X_
 
 > "This skill needs your X API Bearer Token and your X handle to work. Please set them up:"
 >
-> 1. Go to **Customize > Skills > x writer > Edit Inline**
-> 2. Find the `USER CONFIG` section near the top (it is clearly marked)
-> 3. Replace `YOUR_BEARER_TOKEN_HERE` with your X API Bearer Token (get one at https://developer.x.com/en/portal/dashboard)
-> 4. Replace `YOUR_X_HANDLE_HERE` with your X handle (no @ sign)
-> 5. Save, then come back and ask me to write posts again.
+> 1. Open this skill file and find the `USER CONFIG` section near the top (it is clearly marked)
+> 2. Replace `YOUR_BEARER_TOKEN_HERE` with your X API Bearer Token (get one at https://developer.x.com/en/portal/dashboard)
+> 3. Replace `YOUR_X_HANDLE_HERE` with your X handle (no @ sign)
+> 4. Save, then come back and ask me to write posts again.
 
 Do NOT ask the user to paste their API key or handle into the chat. Do NOT proceed with the skill until the config is set. Just give the instructions above and stop.
 
@@ -223,7 +222,7 @@ After presenting drafts, ask the user:
 If the user wants to reuse their style profile in future sessions, suggest saving it:
 
 ```bash
-cp /tmp/xwriter_style_profile.json /home/claude/x_style_profile_$X_HANDLE.json
+cp /tmp/xwriter_style_profile.json ~/x_style_profile_$X_HANDLE.json
 ```
 
 Then in future sessions, the skill can load the saved profile instead of re fetching posts (though refreshing periodically is recommended to keep the style current).

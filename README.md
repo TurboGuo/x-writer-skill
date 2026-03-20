@@ -1,6 +1,6 @@
-# X Writer — Claude Code Skill
+# X Writer — AI Skill
 
-A Claude Code skill that analyzes your X/Twitter writing style from your recent posts and generates draft tweets that sound like you.
+An AI skill that analyzes your X/Twitter writing style from your recent posts and generates draft tweets that sound like you.
 
 ## What it does
 
@@ -21,7 +21,7 @@ No auto-posting. Human approval always required.
 
 ### Installation
 
-Give Claude this link and ask it to install:
+Give your AI assistant this link and ask it to install:
 
 ```
 Install this skill for me: https://raw.githubusercontent.com/TurboGuo/x-writer-skill/main/x-writer-SKILL.md
@@ -32,7 +32,8 @@ Or [download `x-writer-SKILL.md`](https://raw.githubusercontent.com/TurboGuo/x-w
 | Platform | Where to put it |
 |----------|----------------|
 | **Claude Code** | `~/.claude/skills/x-writer-SKILL.md` |
-| **Claude (Web or Desktop)** | Projects > New Project > Instructions, paste the file contents |
+| **Claude Desktop** | Projects > New Project > Instructions, paste the file contents |
+| **Other AI assistants** | Add the file contents to your system prompt or project instructions |
 
 ### Configure
 
@@ -43,7 +44,7 @@ BEARER_TOKEN: YOUR_BEARER_TOKEN_HERE
 X_HANDLE: YOUR_X_HANDLE_HERE
 ```
 
-Then just ask Claude to write posts for you — triggers on phrases like "draft tweets", "write posts in my style", "x writer", etc.
+Then just ask your AI assistant to write posts for you — triggers on phrases like "draft tweets", "write posts in my style", "x writer", etc.
 
 ## Usage examples
 
