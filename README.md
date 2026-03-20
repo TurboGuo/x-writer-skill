@@ -41,6 +41,18 @@ No auto-posting. Human approval always required.
 - "Ghostwrite tweets"
 - "Help me post on X"
 
+## Security Considerations
+
+> **Read this before using the skill.** There are a few risks to be aware of.
+
+| Risk | Description | Mitigation |
+|------|-------------|------------|
+| **Plaintext API token** | Your X API Bearer Token is stored directly in the skill `.md` file. If you commit/push this file with your real token, it will be exposed publicly. | **Never commit the skill file with your real token.** Add `x-writer-SKILL.md` to `.gitignore` after configuring it. Rotate your token immediately if leaked. |
+| **Token in shell history** | The skill runs `curl` commands with your Bearer Token as a flag. These may be logged in `~/.zsh_history` or `~/.bash_history`. | Periodically clear sensitive entries from your shell history, or prefix commands with a space (if `HIST_IGNORE_SPACE` is enabled) to prevent logging. |
+| **Temp files are world-readable** | Fetched posts are saved to `/tmp/xwriter_posts.json`. On shared or multi-user systems, other users can read `/tmp/`. | Acceptable on personal machines. On shared systems, consider changing the output path to a user-owned directory with restricted permissions. |
+| **Style profile persistence** | The optional Step 7 saves your style profile to a predictable path, which could be read by other local users. | Only save if needed. Use a path inside your home directory with `chmod 600`. |
+| **X API rate limits / cost** | The skill calls the X API on every run. Excessive use can hit rate limits (429) or rack up costs on paid tiers. | The skill fetches at most 100 tweets per run. Be mindful of how often you trigger it. |
+
 ## How it works under the hood
 
 The skill uses the X API to pull your recent posts, then performs a detailed style analysis covering tone, structure, vocabulary, topic clusters, and engagement patterns. When generating drafts, it matches your exact voice — post length, emoji usage, hashtag habits, language mixing, and more. Each draft includes verified source URLs for any data claims.
