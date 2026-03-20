@@ -32,8 +32,7 @@ Or [download `x-writer-SKILL.md`](https://raw.githubusercontent.com/TurboGuo/x-w
 | Platform | Where to put it |
 |----------|----------------|
 | **Claude Code** | `~/.claude/skills/x-writer-SKILL.md` |
-| **Claude Desktop** | Customize > Skills > Add Skill, paste the file contents |
-| **Claude.ai (Web)** | Projects > New Project > Instructions, paste the file contents |
+| **Claude (Web or Desktop)** | Projects > New Project > Instructions, paste the file contents |
 
 ### Configure
 
